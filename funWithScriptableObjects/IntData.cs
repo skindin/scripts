@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class FloatValue : ScriptableObject
+public class IntData : ScriptableObject
 {
-    public float value;
+    public int value;
 
-    public void UpdateValue (float num)
+    public void UpdateValue (int num)
     {
         value += num;
     }

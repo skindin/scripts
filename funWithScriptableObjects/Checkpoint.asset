@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eee0663c08be1e4fa566eb0f87ae4c5, type: 3}
-  m_Name: health
+  m_Script: {fileID: 11500000, guid: ee0b57d0f0d86814b8f61cdba3d97c40, type: 3}
+  m_Name: Checkpoint
   m_EditorClassIdentifier: 
-  value: 0
+  value: {x: 0, y: 0, z: 0}

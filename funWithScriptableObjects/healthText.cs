@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class healthText : MonoBehaviour
 {
     public Text text;
-    public FloatValue health;
+    public FloatData health;
 
     private void Update()
     {
