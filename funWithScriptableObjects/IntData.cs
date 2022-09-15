@@ -11,4 +11,15 @@ public class IntData : ScriptableObject
     {
         value += num;
     }
+
+    public void SetValue (int num)
+    {
+        value = num;
+    }
+
+    public void MaxValue (IntData data)
+    {
+        if (value < data.value)
+            value = data.value;
+    }
 }

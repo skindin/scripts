@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class healthText : MonoBehaviour
+public class IntDatToText : MonoBehaviour
 {
     public Text text;
-    public FloatData health;
+    public IntData data;
 
     private void Update()
     {
-        text.text = health.value + "";
+        text.text = data.value + "";
     }
 }
