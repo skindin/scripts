@@ -8,6 +8,11 @@ public class MatchObject : MonoBehaviour
 
     private void Start()
     {
+        //RevealColor();
+    }
+
+    public void RevealColor ()
+    {
         GetComponent<SpriteRenderer>().color = colorID.color;
     }
 }

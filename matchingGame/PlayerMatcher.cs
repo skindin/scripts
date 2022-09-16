@@ -30,6 +30,9 @@ public class PlayerMatcher : MonoBehaviour
                 incorrectMatch.Invoke();
                 Debug.Log("incorrect match");
             }
+
+            otherMatchObj.RevealColor();
+            matchObj.RevealColor();
         }
     }
 }
