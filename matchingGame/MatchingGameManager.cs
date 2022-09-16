@@ -16,7 +16,7 @@ public class MatchingGameManager : MonoBehaviour
 
     public void GameOver ()
     {
-        Debug.Log("game over re*ard");
+        Debug.Log("this is literally the easiest game ever how did you lose");
         gameOverEvent.Invoke();
     }
 
