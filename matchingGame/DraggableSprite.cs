@@ -34,9 +34,16 @@ public class DraggableSprite : MonoBehaviour
 
     private void OnMouseUp()
     {
-        dragging = false;
+        StopDrag();
+    }
 
-        mouseUpEvent.Invoke();
+    public void StopDrag ()
+    {
+        if (dragging)
+        {
+            dragging = false;
+            mouseUpEvent.Invoke();
+        }
     }
 
     public void ResetPos ()

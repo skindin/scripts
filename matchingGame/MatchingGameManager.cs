@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MatchingGameManager : MonoBehaviour
 {
-    public UnityEvent onStart;
-    public UnityEvent gameOverEvent;
+    public UnityEvent onStart, onGo, gameOverEvent;
 
     public void Start()
     {
@@ -16,8 +15,8 @@ public class MatchingGameManager : MonoBehaviour
 
     public void GameOver ()
     {
-        Debug.Log("this is literally the easiest game ever how did you lose");
         gameOverEvent.Invoke();
+        Debug.Log("this is literally the easiest game ever how did you lose");
     }
 
     public void ResetScene()
@@ -25,5 +24,8 @@ public class MatchingGameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-
+    public void Go ()
+    {
+        onGo.Invoke();
+    }
 }
