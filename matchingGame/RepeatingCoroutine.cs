@@ -5,10 +5,10 @@ using UnityEngine.Events;
 
 public class RepeatingCoroutine : MonoBehaviour
 {
-    public IntData cycleData;
-    public int cycleCount = 1;
+    public BoolData condition;
+    public float intervalTime = 1;
     WaitForSeconds wfsecs;
-    public UnityEvent timedEvent, endEvent;
+    public UnityEvent startEvent, timedEvent, endEvent;
 
     // Start is called before the first frame update
 
@@ -29,17 +29,23 @@ public class RepeatingCoroutine : MonoBehaviour
 
     private IEnumerator LoopCoroutine ()
     {
-        cycleData.value = cycleCount;
+        startEvent.Invoke();
+        condition.data = true;
 
-        while (cycleData.value > 0)
+        while (condition.data)
         {
             timedEvent.Invoke();
-            cycleData.AddValue(-1);
+            //cycleData.AddValue(-1);
 
-            wfsecs = new(1);
+            wfsecs = new(intervalTime);
             yield return wfsecs;
         }
 
         endEvent.Invoke();
+    }
+
+    public void TestData (IntData data)
+    {
+        condition.data = data.value > 1;
     }
 }

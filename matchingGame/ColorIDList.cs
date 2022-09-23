@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Vector3Data : DataList
+public class ColorIDList : ScriptableObject
 {
-    public Vector3 value;
+    public List<ColorID> colorIDs;
 }

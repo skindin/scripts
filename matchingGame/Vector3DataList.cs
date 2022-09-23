@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Vector3Data : DataList
+public class Vector3DataList : DataList
 {
-    public Vector3 value;
+    public List<Vector3Data> data;
 }

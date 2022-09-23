@@ -10,6 +10,8 @@ public class PlayerMatcher : MonoBehaviour
     public UnityEvent correctMatch;
     public UnityEvent incorrectMatch;
 
+    public Instancer instancer;
+
     private void Awake()
     {
         matchObj = GetComponent<MatchObject>();
@@ -31,8 +33,12 @@ public class PlayerMatcher : MonoBehaviour
                 Debug.Log("incorrect match");
             }
 
-            otherMatchObj.RevealColor();
-            matchObj.RevealColor();
+            Destroy(collider.gameObject,.01f);
+
+            matchObj.RandomColor();
+
+            //otherMatchObj.RevealColor();
+            //matchObj.RevealColor();
         }
     }
 }

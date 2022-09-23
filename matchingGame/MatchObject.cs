@@ -16,6 +16,7 @@ public class MatchObject : MonoBehaviour
         //RevealColor();
         sprite = GetComponent<SpriteRenderer>();
         ogColor = sprite.color;
+        RandomColor();
     }
 
     public void RevealColor ()
@@ -26,6 +27,19 @@ public class MatchObject : MonoBehaviour
     void ResetColor ()
     {
         sprite.color = ogColor;
+    }
+
+    public void SetColor (ColorID newColor)
+    {
+        colorID = newColor;
+        sprite.color = newColor.color;
+    }
+
+    public void RandomColor ()
+    {
+        var colorList = ColorManager.matchColors.colorIDs;
+        var colorID = DataList.RandomFromList(colorList);
+        SetColor(colorID);
     }
 
     static void ResetColors()
