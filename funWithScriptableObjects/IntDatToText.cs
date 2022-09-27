@@ -8,7 +8,6 @@ public class IntDatToText : MonoBehaviour
 {
     public Text text;
     public IntData data;
-    int value;
     public UnityEvent UpdatedTextEvent;
 
     private void Start()

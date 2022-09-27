@@ -28,4 +28,14 @@ public class MatchingGameManager : MonoBehaviour
     {
         onGo.Invoke();
     }
+
+    public void SaveHighScore (IntData score)
+    {
+        PlayerPrefs.SetInt("HighScore",score.value);
+    }
+
+    public void LoadHighScore (IntData score)
+    {
+        score.value = PlayerPrefs.GetInt("HighScore");
+    }
 }
