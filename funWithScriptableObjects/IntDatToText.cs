@@ -10,10 +10,10 @@ public class IntDatToText : MonoBehaviour
     public IntData data;
     public UnityEvent UpdatedTextEvent;
 
-    private void Start()
-    {
-        text.text = data.value + "";
-    }
+    //private void Start()
+    //{
+    //    text.text = data.value + "";
+    //}
 
     public void UpdateText()
     {

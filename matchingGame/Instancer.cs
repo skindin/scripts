@@ -6,20 +6,31 @@ public class Instancer : MonoBehaviour
 {
     public GameObject prefab;
     public Vector3DataList positions;
+    public Vector3 offset;
+    public float duration = 2;
 
-    public void GenerateRing ()
+    public void GeneratePrefab ()
     {
         var pos = DataList.RandomFromList(positions.data).value;
-        GameObject ring = Instantiate(prefab, pos+transform.position, Quaternion.identity);
+        GameObject newObj = Instantiate(prefab, pos+transform.position + offset, Quaternion.identity, transform);
 
-        Destroy(ring, 2);
+        Destroy(newObj, duration);
     }
 
     private void OnDrawGizmos()
     {
         foreach (var pos in positions.data)
         {
-            Gizmos.DrawWireSphere(pos.value + transform.position, .5f);
+            Gizmos.DrawWireSphere(pos.value + transform.position + offset, .5f);
+        }
+    }
+
+    public void DestroyAllChildren ()
+    {
+        var children = transform.GetComponentsInChildren<Transform>();
+        foreach (var child in children)
+        {
+            Destroy(child.gameObject, 1f);
         }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class MatchObject : MonoBehaviour
 {
     public static List<MatchObject> matchObjs = new();
+    public ColorIDList colorList;
 
     public ColorID colorID;
     Color ogColor;
@@ -37,8 +38,7 @@ public class MatchObject : MonoBehaviour
 
     public void RandomColor ()
     {
-        var colorList = ColorManager.matchColors.colorIDs;
-        var colorID = DataList.RandomFromList(colorList);
+        var colorID = DataList.RandomFromList(colorList.colorIDs);
         SetColor(colorID);
     }
 
