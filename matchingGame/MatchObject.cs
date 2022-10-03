@@ -50,8 +50,8 @@ public class MatchObject : MonoBehaviour
         }
     }
 
-    public void ResetAll ()
+    public void DestroyObj(float time)
     {
-        ResetColors();
+        Destroy(gameObject, time);
     }
 }

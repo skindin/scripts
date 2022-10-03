@@ -7,14 +7,16 @@ public class Instancer : MonoBehaviour
     public GameObject prefab;
     public Vector3DataList positions;
     public Vector3 offset;
+    public bool destroyAfterDelay = true;
     public float duration = 2;
 
     public void GeneratePrefab ()
     {
         var pos = DataList.RandomFromList(positions.data).value;
-        GameObject newObj = Instantiate(prefab, pos+transform.position + offset, Quaternion.identity, transform);
+        GameObject newObj = Instantiate(prefab, pos+transform.position + offset, Quaternion.identity);
 
-        Destroy(newObj, duration);
+        if (destroyAfterDelay)
+            Destroy(newObj, duration);
     }
 
     private void OnDrawGizmos()
@@ -25,12 +27,12 @@ public class Instancer : MonoBehaviour
         }
     }
 
-    public void DestroyAllChildren ()
-    {
-        var children = transform.GetComponentsInChildren<Transform>();
-        foreach (var child in children)
-        {
-            Destroy(child.gameObject, 1f);
-        }
-    }
+    //public void DestroyAllChildren ()
+    //{
+    //    var children = transform.GetComponentsInChildren<Transform>();
+    //    foreach (var child in children)
+    //    {
+    //        Destroy(child.gameObject, 1f);
+    //    }
+    //}
 }
